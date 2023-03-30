@@ -1,15 +1,11 @@
 ## Step 1.
-Create a cypress.env.json at the root folder of the project.
-Copy the content I gave HR team.
-
-## Step 2.
 Install the dependencies
 
 ```bash
 npm install
 ```
 
-## Step 3.
+## Step 2.
 
 Run the test
 

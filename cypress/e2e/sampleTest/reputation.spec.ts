@@ -1,14 +1,12 @@
 describe("Forms", () => {
   const Form_URL = "/#sign-in";
   beforeEach(() => {
-
     // Login to zuju and visit reputation page before every test
     cy.visit(Form_URL);
 
     const email = Cypress.env("email");
     const password = Cypress.env("password");
     cy.login("email", email, password);
-
 
     // Wait for page to load and move to next line of code when the text Upcoming for you is displayed
     cy.get('h2[data-cy="page-heading"]', { timeout: 10000 }).should(
@@ -19,7 +17,6 @@ describe("Forms", () => {
   });
 
   it("Check favorite teams section exist", () => {
-
     // Check text "Favourite Teams" is displayed
     cy.contains("Favourite Teams", { timeout: 3000 });
 
@@ -30,7 +27,6 @@ describe("Forms", () => {
   });
 
   it("Check all teams section exist", () => {
-
     // Check the text "All Teams" is displayed
     cy.contains("All Teams", { timeout: 3000 });
 
@@ -41,10 +37,9 @@ describe("Forms", () => {
   });
 
   it("Able to remove a team from favorite team list", () => {
-
     // Try to remove arsenal from favorite teams
 
-    let team="Arsenal";
+    let team = "Arsenal";
     try {
       cy.get(
         'div[class^="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root"]'
@@ -57,7 +52,6 @@ describe("Forms", () => {
 
       cy.get("div.MuiGrid-container:nth-child(1)").contains(team);
     } finally {
-
       // Try to add arsenal to favourite team as a teardown step
       cy.get(
         'div[class^="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root"]'

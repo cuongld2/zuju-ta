@@ -8,7 +8,6 @@ describe("Check functionalities of the login page", () => {
   });
 
   it("should display the Autocomplete title", () => {
-
     // Check Welcome to ZUJU KICKOFF text is displayed
     cy.get(".MuiTypography-h2").should("contain", "Welcome to ZUJU KICKOFF");
   });
@@ -48,7 +47,6 @@ describe("Check functionalities of the login page", () => {
     const email = Cypress.env("email");
     const password = "incorrectPassword";
 
-
     // Login to Zuju using incorrect password
     cy.login("email", email, password);
 
@@ -62,7 +60,6 @@ describe("Check functionalities of the login page", () => {
   });
 
   it("navigate to forgot password screen successfully", () => {
-
     // Go to forgot password screen
     cy.contains("Forgot password?").click();
 
@@ -73,7 +70,6 @@ describe("Check functionalities of the login page", () => {
   });
 
   it("navigate to sign up screen successfully", () => {
-
     // Go to sign up screen
     cy.contains("Create one").click();
 
@@ -84,7 +80,6 @@ describe("Check functionalities of the login page", () => {
   });
 
   it("Able to close the sign in form", () => {
-
     // Try to close the sign in form
     cy.get(
       'svg[class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-1k33q06"]'
